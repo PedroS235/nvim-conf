@@ -115,10 +115,11 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("https://github.com/p00f/cphelper.nvim")
-
 	-- Copilot
 	-- use("https://github.com/github/copilot.vim")
+
+	-- Cphelper
+	use("p00f/cphelper.nvim")
 
 	-- End of Plugins Declaration
 	if packer_bootstrap then

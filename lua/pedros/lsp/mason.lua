@@ -2,7 +2,8 @@ local lsp_servers = {
 	"lua_ls", -- Lua
 	"pyright", -- Python
 	"clangd", -- C/C++
-	"hls", -- Haskell
+	"hls",
+	"marksman",
 	"rust_analyzer",
 }
 

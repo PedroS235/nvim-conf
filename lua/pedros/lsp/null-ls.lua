@@ -14,6 +14,7 @@ null_ls.setup({
 	sources = {
 		-- python
 		formatting.black.with({ extra_args = { "-l", "79" } }),
+
 		-- formatting.autopep8,
 		diagnostics.flake8,
 
@@ -22,6 +23,7 @@ null_ls.setup({
 
 		-- shell
 		formatting.beautysh,
+
 		diagnostics.shellcheck,
 
 		-- C/C++
@@ -33,10 +35,8 @@ null_ls.setup({
 		-- html
 		diagnostics.tidy,
 
-		formatting.fourmolu,
-
-		-- Rust
 		formatting.rustfmt,
+		-- formatting.marksman,
 	},
 	-- Autoformatting on save
 	on_attach = function(client, bufnr)
