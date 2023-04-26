@@ -12,7 +12,7 @@ vim.g.mapleader = " "
 
 -- Navigation between active buffers
 keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
-keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
+keymap("n", "L", ":bnext<CR>", opts)     -- RIGHT
 
 -- Navigation between windows
 keymap("n", "<C-h>", "<C-w>h", opts) -- LEFT
@@ -21,10 +21,10 @@ keymap("n", "<C-k>", "<C-w>k", opts) -- UP
 keymap("n", "<C-j>", "<C-w>j", opts) -- DOWN
 
 -- Resize windows
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts) -- LEFT
+keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)  -- LEFT
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- RIGHT
-keymap("n", "<C-Up>", ":resize -2<CR>", opts) -- UP
-keymap("n", "<C-Down>", ":resize +2<CR>", opts) -- DOWN
+keymap("n", "<C-Up>", ":resize -2<CR>", opts)             -- UP
+keymap("n", "<C-Down>", ":resize +2<CR>", opts)           -- DOWN
 
 -- Indent line
 keymap("v", "<", "<gv", opts) -- LEFT
@@ -41,6 +41,9 @@ keymap("n", "<leader>nh", ":noh<CR>", opts)
 keymap("v", "<leader>y", '"+y', opts)
 keymap("n", "<leader>y", '"+y', opts)
 
+-- Open neovim config in a new tab
+keymap("n", "<leader>c", ":tabnew ~/.config/nvim<CR>")
+
 -- ------------------
 -- - Plugin Keympas -
 -- ------------------
@@ -49,9 +52,9 @@ keymap("n", "<leader>y", '"+y', opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>f", require("telescope.builtin").find_files, opts) -- Find Files
-keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts) -- Live grep
-keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts) -- View current buffers
+keymap("n", "<leader>f", require("telescope.builtin").find_files, opts)   -- Find Files
+keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts)   -- Live grep
+keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts)     -- View current buffers
 keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts) -- View the lsp diagnostics of the current buffers
 
 -- Iluminate
