@@ -116,7 +116,7 @@ return require("packer").startup(function(use)
 	})
 
 	-- Copilot
-	use("https://github.com/github/copilot.vim")
+    use("zbirenbaum/copilot.lua")
 
 	-- Cphelper
 	use("p00f/cphelper.nvim")
