@@ -116,10 +116,13 @@ return require("packer").startup(function(use)
 	})
 
 	-- Copilot
-    use("zbirenbaum/copilot.lua")
+	use("zbirenbaum/copilot.lua")
 
 	-- Cphelper
 	use("p00f/cphelper.nvim")
+
+	-- Presence (Show what you are doing in Discord)
+	use("andweeb/presence.nvim")
 
 	-- End of Plugins Declaration
 	if packer_bootstrap then
