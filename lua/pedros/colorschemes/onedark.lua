@@ -6,7 +6,7 @@ end
 onedark.setup({
 	-- Main options --
 	-- Available: 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-	style = "darker",
+	style = "dark",
 	transparent = false, -- Show/hide background
 
 	-- toggle theme style ---
@@ -16,7 +16,7 @@ onedark.setup({
 	-- Change code style ---
 	code_style = {
 		comments = "italic",
-		keywords = "none",
+		keywords = "bold",
 		functions = "bold",
 		strings = "none",
 		variables = "none",
