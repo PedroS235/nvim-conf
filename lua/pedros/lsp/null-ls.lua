@@ -38,8 +38,8 @@ null_ls.setup({
 
 		formatting.rustfmt,
 		-- formatting.marksman,
-		formatting.fourmolu,
 		formatting.gofumpt,
+		formatting.fourmolu.with({ extra_args = { "--indentation", "4" } }),
 	},
 	-- Autoformatting on save
 	on_attach = function(client, bufnr)

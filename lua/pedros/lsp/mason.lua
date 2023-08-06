@@ -6,7 +6,6 @@ local lsp_servers = {
 	"marksman",
 	"rust_analyzer",
 	"gopls",
-	"ltex",
 }
 
 -- Setup Mason
