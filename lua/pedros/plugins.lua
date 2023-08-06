@@ -34,6 +34,7 @@ return require("packer").startup(function(use)
 	use("navarasu/onedark.nvim")
 	use("sam4llis/nvim-tundra")
 	use("catppuccin/nvim")
+	use("maxmx03/fluoromachine.nvim")
 
 	-- Status line
 	use("nvim-lualine/lualine.nvim")
@@ -116,10 +117,15 @@ return require("packer").startup(function(use)
 	})
 
 	-- Copilot
-    use("zbirenbaum/copilot.lua")
+	use("zbirenbaum/copilot.lua")
 
 	-- Cphelper
 	use("p00f/cphelper.nvim")
+
+	-- LSP signature
+	use({
+		"ray-x/lsp_signature.nvim",
+	})
 
 	-- End of Plugins Declaration
 	if packer_bootstrap then
