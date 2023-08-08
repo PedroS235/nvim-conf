@@ -2,10 +2,18 @@ local lsp_servers = {
 	"lua_ls", -- Lua
 	"pyright", -- Python
 	"clangd", -- C/C++
-	"hls",
-	"marksman",
-	"rust_analyzer",
-	"gopls",
+	"hls", -- Haskell
+	"marksman", -- Markdown
+	"rust_analyzer", -- Rust
+	"gopls", -- Go
+}
+
+local formatters = {
+	"stylua",
+	"black",
+	"prettier",
+	"beautysh",
+	"clang_format",
 }
 
 -- Setup Mason
@@ -26,13 +34,7 @@ require("mason-lspconfig").setup({
 })
 
 require("mason-null-ls").setup({
-	ensured_installed = {
-		"prettier",
-		"stylua",
-		"black",
-		"beautysh",
-		"clang_format",
-	},
+	ensured_installed = formatters,
 	automatic_installation = true,
 })
 
