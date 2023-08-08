@@ -56,7 +56,6 @@ keymap("n", "<leader>f", require("telescope.builtin").find_files, opts) -- Find 
 keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts) -- Live grep
 keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts) -- View current buffers
 keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts) -- View the lsp diagnostics of the current buffers
-keymap("n", "<leader>fh", require("telescope.builtin").help_tags, opts)
 
 -- Iluminate
 keymap("n", "<C-n>", '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', opts)
@@ -64,6 +63,3 @@ keymap("n", "<C-p>", '<cmd>lua require"illuminate".next_reference{reverse=true,w
 
 -- LazyGit
 keymap("n", "<leader>lz", ":LazyGit<CR>", opts)
-
--- Copilot
--- keymap("i", "<C-f>", "copilot#Accept('<CR>')", { silent = true, expr = true })
