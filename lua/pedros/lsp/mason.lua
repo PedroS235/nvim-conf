@@ -1,10 +1,12 @@
 local lsp_servers = {
-    "lua_ls",     -- Lua
-    "pyright",    -- Python
-    "clangd",     -- C/C++
-    -- "hls", -- Haskell
-    "marksman",   -- Markdown
+    "lua_ls",        -- Lua
+    "pyright",       -- Python
+    "clangd",        -- C/C++
+    "marksman",      -- Markdown
     "rust_analyzer", -- Rust
+    "html",
+    "cssls",
+    -- "hls", -- Haskell
     -- "gopls", -- Go
 }
 

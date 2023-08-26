@@ -33,9 +33,6 @@ null_ls.setup({
 		-- js/css/html/json/...
 		formatting.prettier.with({ extra_args = { "--single-quote", "--jsx-single-quote" } }),
 
-		-- html
-		diagnostics.tidy,
-
 		formatting.rustfmt,
 		-- formatting.marksman,
 		formatting.gofumpt,
