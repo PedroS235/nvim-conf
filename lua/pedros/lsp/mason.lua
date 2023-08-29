@@ -4,10 +4,13 @@ local lsp_servers = {
     "clangd",        -- C/C++
     "marksman",      -- Markdown
     "rust_analyzer", -- Rust
+    "tsserver",      -- JavaScript/TypeScript
     "html",
     "cssls",
-    -- "hls", -- Haskell
-    -- "gopls", -- Go
+    -- "hls",
+    -- "Haskell",
+    -- "gopls",
+    -- Go
 }
 
 local formatters = {
