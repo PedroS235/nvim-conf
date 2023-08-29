@@ -85,7 +85,7 @@ local plugins = {
     "windwp/nvim-ts-autotag",
 
     -- Paranthesis rainbow colors
-    "p00f/nvim-ts-rainbow",
+    "HiPhish/nvim-ts-rainbow2",
 
     -- LazyGit
     "kdheepak/lazygit.nvim",
