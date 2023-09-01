@@ -36,7 +36,10 @@ null_ls.setup({
 		formatting.rustfmt,
 		-- formatting.marksman,
 		formatting.gofumpt,
+
 		formatting.fourmolu.with({ extra_args = { "--indentation", "4" } }),
+
+        formatting.dart_format,
 	},
 	-- Autoformatting on save
 	on_attach = function(client, bufnr)

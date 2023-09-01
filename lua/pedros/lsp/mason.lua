@@ -13,6 +13,10 @@ local lsp_servers = {
     -- Go
 }
 
+local non_mason_servers = {
+    "dartls", -- Dart
+}
+
 local formatters = {
     "stylua",
     "black",
@@ -63,5 +67,9 @@ for _, server in pairs(lsp_servers) do
         opts = vim.tbl_deep_extend("force", conf_opts, opts)
     end
 
+    lspconfig[server].setup(opts)
+end
+
+for _, server in pairs(non_mason_servers) do
     lspconfig[server].setup(opts)
 end
