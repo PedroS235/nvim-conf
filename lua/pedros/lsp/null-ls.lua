@@ -38,8 +38,7 @@ null_ls.setup({
 		formatting.gofumpt,
 
 		formatting.fourmolu.with({ extra_args = { "--indentation", "4" } }),
-
-        formatting.dart_format,
+		formatting.dart_format.with({ extra_args = { "-i", "0" } }),
 	},
 	-- Autoformatting on save
 	on_attach = function(client, bufnr)
