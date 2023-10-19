@@ -13,15 +13,15 @@ return configs.setup({
 		disable = { "" }, -- list of language that will be disabled
 		additional_vim_regex_highlighting = true,
 	},
-	indent = { enable = true, disable = { "yaml", "html", "dart" } },
+	indent = { enable = true, disable = { "yaml", "html" } },
 	rainbow = {
-		enable = false, -- disable for cpp
+		enable = true,
 		-- list of languages you want to disable the plugin for
-		disable = { "jsx", "cpp" },
+		-- disable = { 'jsx', 'cpp' },
 		-- Which query to use for finding delimiters
-		query = "rainbow-parens",
+		-- query = 'rainbow-parens',
 		-- Highlight the entire buffer all at once
-		strategy = require("ts-rainbow").strategy.global,
+		-- strategy = require('ts-rainbow').strategy.global,
 	},
 	playground = {
 		enable = false,
