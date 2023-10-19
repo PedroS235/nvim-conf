@@ -45,6 +45,14 @@ keymap("n", "<leader>y", '"+y', opts)
 -- Open neovim config in a new tab
 keymap("n", "<leader>c", ":tabnew ~/.config/nvim<CR>")
 
+-- Page Up/Down with cursor in the middle
+keymap("n", "<C-u>", "<C-u>zz", opts)
+keymap("n", "<C-d>", "<C-d>zz", opts)
+
+-- Next/Previous Selection
+keymap("n", "n", "nzz", opts)
+keymap("n", "N", "Nzz", opts)
+
 -- ------------------
 -- - Plugin Keympas -
 -- ------------------
@@ -53,10 +61,11 @@ keymap("n", "<leader>c", ":tabnew ~/.config/nvim<CR>")
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>f", require("telescope.builtin").find_files, opts)   -- Find Files
-keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts)   -- Live grep
-keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts)     -- View current buffers
-keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts) -- View the lsp diagnostics of the current buffers
+keymap("n", "<leader>f", require("telescope.builtin").find_files, opts)       -- Find Files
+keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts)       -- Live grep
+keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts)         -- View current buffers
+keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts)     -- View the lsp diagnostics of the current buffers
+keymap("n", "<leader>ch", require("telescope.builtin").command_history, opts) -- View the commands
 
 -- Iluminate
 keymap("n", "<C-n>", '<cmd>lua require"illuminate".next_reference{wrap=true}<cr>', opts)
