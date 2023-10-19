@@ -6,4 +6,3 @@ end
 require("pedros.lsp.mason")
 require("pedros.lsp.handlers").setup()
 require("pedros.lsp.null-ls")
-require("lsp_signature").setup()

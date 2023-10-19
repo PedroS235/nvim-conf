@@ -44,14 +44,6 @@ M.setup = function()
 	}
 
 	vim.diagnostic.config(diagnostic_config)
-
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
 end
 
 local function lsp_keymaps(bufnr)
@@ -79,18 +71,6 @@ M.on_attach = function(client, bufnr)
 		return
 	end
 	illuminate.on_attach(client)
-	require("lsp_signature").on_attach({
-		bind = true,
-		handler_opts = {
-			border = "rounded",
-		},
-		hint_enable = false,
-		hi_parameter = "LspSignatureActiveParameter",
-		max_height = 22,
-		max_width = 120,
-		transparency = 20,
-		toggle_key = "<M-x>",
-	}, bufnr)
 end
 
 return M
