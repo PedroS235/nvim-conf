@@ -1,117 +1,132 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        "git",
-        "clone",
-        "--filter=blob:none",
-        "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
-        lazypath,
-    })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 
-    -- Common plugins
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons",
+	-- Common plugins
+	"nvim-lua/plenary.nvim",
+	"nvim-tree/nvim-web-devicons",
 
-    -- Color Schemes
-    { "navarasu/onedark.nvim",      priority = 1000 },
-    { "sam4llis/nvim-tundra",       priority = 1000 },
-    { "catppuccin/nvim",            priority = 1000 },
-    { "maxmx03/fluoromachine.nvim", priority = 1000 },
-    { "Mofiqul/dracula.nvim",       priority = 1000 },
+	-- Color Schemes
+	{ "navarasu/onedark.nvim", priority = 1000 },
+	{ "sam4llis/nvim-tundra", priority = 1000 },
+	{ "catppuccin/nvim", priority = 1000 },
+	{ "maxmx03/fluoromachine.nvim", priority = 1000 },
+	{ "Mofiqul/dracula.nvim", priority = 1000 },
 
-    -- Status line
-    "nvim-lualine/lualine.nvim",
+	-- Status line
+	"nvim-lualine/lualine.nvim",
 
-    -- File Explorer
-    "nvim-tree/nvim-tree.lua",
+	-- File Explorer
+	"nvim-tree/nvim-tree.lua",
 
-    -- Highlights the all word occurrences of the word under cursor
-    "RRethy/vim-illuminate",
+	-- Highlights the all word occurrences of the word under cursor
+	"RRethy/vim-illuminate",
 
-    -- Telescope (Fuzzy finder)
-    "nvim-telescope/telescope.nvim",
+	-- Telescope (Fuzzy finder)
+	"nvim-telescope/telescope.nvim",
 
-    -- Treesitter
-    {
-        "nvim-treesitter/nvim-treesitter",
-        build = ":TSUpdate",
-    },
-    "nvim-treesitter/playground",
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+	},
+	"nvim-treesitter/playground",
 
-    -- LSP Configuration
-    "neovim/nvim-lspconfig",
-    "williamboman/mason.nvim",
-    "williamboman/mason-lspconfig.nvim",
-    "jose-elias-alvarez/null-ls.nvim",
-    "jayp0521/mason-null-ls.nvim",
-    "hrsh7th/cmp-nvim-lsp",
-    -- LSP signature
-    "ray-x/lsp_signature.nvim",
+	-- LSP Configuration
+	"neovim/nvim-lspconfig",
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
+	"jayp0521/mason-null-ls.nvim",
+	"hrsh7th/cmp-nvim-lsp",
+	-- LSP signature
+	"ray-x/lsp_signature.nvim",
 
-    -- Autocompletion
-    "hrsh7th/nvim-cmp",         -- The completion plugi,
-    "hrsh7th/cmp-buffer",       -- buffer completion,
-    "hrsh7th/cmp-path",         -- path completion,
-    "hrsh7th/cmp-cmdline",      -- cmdline completion,
-    "hrsh7th/cmp-nvim-lua",
-    "saadparwaiz1/cmp_luasnip", -- snippet completion,
+	-- Autocompletion
+	"hrsh7th/nvim-cmp", -- The completion plugi,
+	"hrsh7th/cmp-buffer", -- buffer completion,
+	"hrsh7th/cmp-path", -- path completion,
+	"hrsh7th/cmp-cmdline", -- cmdline completion,
+	"hrsh7th/cmp-nvim-lua",
+	"saadparwaiz1/cmp_luasnip", -- snippet completion,
 
-    -- snippets
-    "L3MON4D3/LuaSnip",             --snippet engin,
-    "rafamadriz/friendly-snippets", -- a bunch of snippets to us,
+	-- snippets
+	"L3MON4D3/LuaSnip", --snippet engin,
+	"rafamadriz/friendly-snippets", -- a bunch of snippets to us,
 
-    -- Bufferline - Improves the tabs
-    "akinsho/bufferline.nvim",
+	-- Bufferline - Improves the tabs
+	"akinsho/bufferline.nvim",
 
-    --  Draws indents lines
-    "lukas-reineke/indent-blankline.nvim",
+	--  Draws indents lines
+	"lukas-reineke/indent-blankline.nvim",
 
-    -- Toggles a CLI inside nvim
-    "akinsho/toggleterm.nvim",
+	-- Toggles a CLI inside nvim
+	"akinsho/toggleterm.nvim",
 
-    --  Allows to surrond words with "" for instance
-    "kylechui/nvim-surround",
+	--  Allows to surrond words with "" for instance
+	"kylechui/nvim-surround",
 
-    -- Comment lines using gc
-    "terrortylor/nvim-comment",
+	-- Comment lines using gc
+	"terrortylor/nvim-comment",
 
-    -- Auto closing pairs/tags
-    "windwp/nvim-autopairs",
-    "windwp/nvim-ts-autotag",
+	-- Auto closing pairs/tags
+	"windwp/nvim-autopairs",
+	"windwp/nvim-ts-autotag",
 
-    -- Paranthesis rainbow colors
-    "HiPhish/nvim-ts-rainbow2",
+	-- Paranthesis rainbow colors
+	"HiPhish/nvim-ts-rainbow2",
 
-    -- LazyGit
-    "kdheepak/lazygit.nvim",
+	-- LazyGit
+	"kdheepak/lazygit.nvim",
 
-    -- Tmux navigator
-    "christoomey/vim-tmux-navigator",
+	-- Tmux navigator
+	"christoomey/vim-tmux-navigator",
 
-    -- Git signs
-    "lewis6991/gitsigns.nvim",
+	-- Git signs
+	"lewis6991/gitsigns.nvim",
 
-    -- Markdown Preview
-    {
-        "iamcco/markdown-preview.nvim",
-        build = function()
-            vim.fn["mkdp#util#install"]()
-        end,
-    },
+	-- Markdown Preview
+	{
+		"iamcco/markdown-preview.nvim",
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+	},
 
-    -- Copilot
-    "zbirenbaum/copilot.lua",
+	-- Copilot
+	"zbirenbaum/copilot.lua",
 
-    -- Cphelper
-    "p00f/cphelper.nvim",
+	-- Cphelper
+	"p00f/cphelper.nvim",
 
-    -- Presence (Show what you are doing in Discord)
-    "andweeb/presence.nvim",
+	-- Presence (Show what you are doing in Discord)
+	"andweeb/presence.nvim",
+
+	-- Marp
+	"aca/marp.nvim",
+
+	-- nvim notify
+	"rcarriga/nvim-notify",
+
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+		},
+	},
 }
 
 local opts = {}
