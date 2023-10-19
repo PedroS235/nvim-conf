@@ -50,8 +50,8 @@ local plugins = {
 	"jose-elias-alvarez/null-ls.nvim",
 	"jayp0521/mason-null-ls.nvim",
 	"hrsh7th/cmp-nvim-lsp",
-	-- LSP signature
-	"ray-x/lsp_signature.nvim",
+	-- -- LSP signature
+	-- "ray-x/lsp_signature.nvim",
 
 	-- Autocompletion
 	"hrsh7th/nvim-cmp", -- The completion plugi,
