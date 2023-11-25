@@ -9,14 +9,10 @@ onedark.setup({
 	style = "dark",
 	transparent = false, -- Show/hide background
 
-	-- toggle theme style ---
-	toggle_style_key = "<leader>ts", -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-	toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer" }, -- List of styles to toggle between
-
 	-- Change code style ---
 	code_style = {
 		comments = "italic",
-		keywords = "bold",
+		keywords = "none",
 		functions = "bold",
 		strings = "none",
 		variables = "none",
