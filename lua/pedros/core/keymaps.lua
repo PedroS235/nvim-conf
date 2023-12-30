@@ -33,14 +33,14 @@ keymap("n", "<leader>nh", ":noh<CR>", opts)
 keymap("v", "<leader>y", '"+y', opts)
 keymap("n", "<leader>y", '"+y', opts)
 
--- Open neovim config in a new tab
-keymap("n", "<leader>c", ":tabnew ~/.config/nvim<CR>")
+-- Open neovim config in a new tmux window
+keymap("n", "<leader>c", ":term tmux new-window 'nvim ~/.config/nvim/'<CR>")
 
 -- Page Up/Down with cursor in the middle
 keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<C-d>", "<C-d>zz", opts)
 
--- Next/Previous Selection
+-- Next/Previous Selection with curser in the middle
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 
@@ -52,6 +52,7 @@ keymap("n", "N", "Nzz", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
+-- TODO: Improve keymaps and add more useful ones
 keymap("n", "<leader>f", require("telescope.builtin").find_files, opts) -- Find Files
 keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts) -- Live grep
 keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts) -- View current buffers
