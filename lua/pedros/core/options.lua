@@ -63,6 +63,3 @@ opt.undofile = true
 
 -- Set neovim to use system's clipboard
 -- opt.clipboard:append("unnamedplus")
-
--- Disable <tab> for copilot
--- vim.g.copilot_no_tab_map = true
