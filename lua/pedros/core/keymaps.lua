@@ -1,9 +1,6 @@
 local opts = { noremap = true, silent = true }
 local keymap = vim.keymap.set
 
--- Set the leader key to a <space>
-vim.g.mapleader = " "
-
 -- -------------------
 -- - General Keymaps -
 -- -------------------

@@ -63,3 +63,6 @@ opt.undofile = true
 
 -- Set neovim to use system's clipboard
 -- opt.clipboard:append("unnamedplus")
+
+-- Set the leader key to a <space>
+vim.g.mapleader = " "
