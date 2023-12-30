@@ -4,28 +4,19 @@ local keymap = vim.keymap.set
 -- Set the leader key to a <space>
 vim.g.mapleader = " "
 
--- keymap(mode, key_combination, command, options)
-
 -- -------------------
 -- - General Keymaps -
 -- -------------------
 
 -- Navigation between active buffers
 keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
-keymap("n", "L", ":bnext<CR>", opts)     -- RIGHT
-
--- Navigation between windows No need to have this, otherwise there is a
--- conflict with tmux navigator
--- keymap("n", "<C-h>", "<C-w>h", opts) -- LEFT
--- keymap("n", "<C-l>", "<C-w>l", opts) -- RIGHT
--- keymap("n", "<C-k>", "<C-w>k", opts) -- UP
--- keymap("n", "<C-j>", "<C-w>j", opts) -- DOWN
+keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
 
 -- Resize windows
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)  -- LEFT
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts) -- RIGHT
-keymap("n", "<C-Up>", ":resize -2<CR>", opts)             -- UP
-keymap("n", "<C-Down>", ":resize +2<CR>", opts)           -- DOWN
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts) -- LEFT
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts) -- RIGHT
+keymap("n", "<C-Up>", ":resize +2<CR>", opts) -- UP
+keymap("n", "<C-Down>", ":resize -2<CR>", opts) -- DOWN
 
 -- Indent line
 keymap("v", "<", "<gv", opts) -- LEFT
@@ -61,10 +52,10 @@ keymap("n", "N", "Nzz", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Telescope
-keymap("n", "<leader>f", require("telescope.builtin").find_files, opts)       -- Find Files
-keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts)       -- Live grep
-keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts)         -- View current buffers
-keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts)     -- View the lsp diagnostics of the current buffers
+keymap("n", "<leader>f", require("telescope.builtin").find_files, opts) -- Find Files
+keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts) -- Live grep
+keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts) -- View current buffers
+keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts) -- View the lsp diagnostics of the current buffers
 keymap("n", "<leader>ch", require("telescope.builtin").command_history, opts) -- View the commands
 
 -- Iluminate
