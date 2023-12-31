@@ -3,15 +3,14 @@ return {
 	tag = "0.1.5",
 	dependencies = { "nvim-lua/plenary.nvim" },
 	opts = {
-	defaults = {
-		mappings = {
-			i = {},
+		defaults = {
+			mappings = {
+				i = {},
+			},
 		},
+		pickers = {
+			find_files = { theme = "dropdown", previewer = true },
+		},
+		extensions = {},
 	},
-	pickers = {
-		find_files = { theme = "dropdown", previewer = true },
-	},
-	extensions = {},
-
-	}
 }
