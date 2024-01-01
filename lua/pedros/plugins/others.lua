@@ -32,4 +32,7 @@ return {
 
 	-- nvim notify
 	-- "rcarriga/nvim-notify",
+
+	-- LazyGit
+	"kdheepak/lazygit.nvim",
 }
