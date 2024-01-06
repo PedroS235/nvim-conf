@@ -1,19 +1,32 @@
--- Bootstrap Lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
 require("pedros.core.options")
-require("lazy").setup("pedros.plugins", {})
 require("pedros.core.keymaps")
-require("pedros.lsp")
-require("pedros.colorschemes")
+require("pedros.launch")
+
+spec("pedros.colorscheme")
+spec("pedros.telescope")
+spec("pedros.nvim-tree")
+spec("pedros.comment")
+spec("pedros.treesitter")
+spec("pedros.lualine")
+spec("pedros.gitsigns")
+spec("pedros.bufferline")
+spec("pedros.copilot")
+spec("pedros.noice")
+spec("pedros.surround")
+spec("pedros.lazygit")
+spec("pedros.markdown-preview")
+spec("pedros.illuminate")
+spec("pedros.null-ls")
+spec("pedros.mason")
+spec("pedros.lsp-config")
+spec("pedros.cmp")
+spec("pedros.presence")
+spec("pedros.schema-store")
+
+--[[ TODO: 
+    These plugins were not ported yet.
+    "HiPhish/nvim-ts-rainbow2",
+	"christoomey/vim-tmux-navigator",
+]]
+
+require("pedros.lazy")

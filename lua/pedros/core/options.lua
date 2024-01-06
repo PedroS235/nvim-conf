@@ -33,14 +33,11 @@ opt.sidescrolloff = 8
 -- Disable text wrap
 opt.wrap = false
 
--- Increase the performace on completion
-opt.updatetime = 300
-
 -- Disable the use of swap files
 opt.swapfile = false
 
 -- Search options
-opt.smartcase = true -- Searches depending of the case
+opt.smartcase = true -- Searches depending the case
 opt.ignorecase = true
 
 -- Remove the bottom line where it shows the current vim mode
@@ -63,6 +60,3 @@ opt.undofile = true
 
 -- Set neovim to use system's clipboard
 -- opt.clipboard:append("unnamedplus")
-
--- Set the leader key to a <space>
-vim.g.mapleader = " "

@@ -1,1 +1,0 @@
-require("pedros.colorschemes.catppuccin")
