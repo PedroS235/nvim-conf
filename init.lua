@@ -30,6 +30,8 @@ spec("pedros.diffview")
 spec("pedros.harpoon")
 spec("pedros.tabby")
 spec("pedros.bqf")
+spec("pedros.project")
+spec("pedros.ufo")
 
 -- Having problems with line movement
 -- spec("pedros.tmux-navigator")
