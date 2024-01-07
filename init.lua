@@ -24,10 +24,12 @@ spec("pedros.cmp")
 spec("pedros.presence")
 spec("pedros.schema-store")
 spec("pedros.which-key")
-spec("pedros.breadcrums")
+spec("pedros.dropbar")
 spec("pedros.indentline")
 spec("pedros.diffview")
 spec("pedros.harpoon")
+spec("pedros.tabby")
+spec("pedros.bqf")
 
 -- Having problems with line movement
 -- spec("pedros.tmux-navigator")
