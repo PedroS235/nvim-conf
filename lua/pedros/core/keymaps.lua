@@ -6,13 +6,9 @@ keymap("n", "<Space>", "", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- -------------------
--- - General Keymaps -
--- -------------------
-
 -- Navigation between active buffers
-keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
-keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
+-- keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
+-- keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
 
 -- Resize windows
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts) -- LEFT
@@ -45,3 +41,6 @@ keymap("n", "N", "Nzz", opts)
 
 -- Do not replace current yank with substituted text
 keymap("x", "p", [["_dP]], opts)
+
+-- Close/delete current buffer
+keymap("n", "<leader>q", ":bd<CR>", { desc = "Close current Buffer" })
