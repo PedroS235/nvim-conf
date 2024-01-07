@@ -35,5 +35,6 @@
   "presence.nvim": { "branch": "main", "commit": "87c857a56b7703f976d3a5ef15967d80508df6e6" },
   "schemastore.nvim": { "branch": "main", "commit": "7ccffe69a8c24fcd8637788955e13d7fd8aa2f46" },
   "telescope.nvim": { "branch": "master", "commit": "87e92ea31b2b61d45ad044cf7b2d9b66dad2a618" },
-  "vim-illuminate": { "branch": "master", "commit": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86" }
+  "vim-illuminate": { "branch": "master", "commit": "3bd2ab64b5d63b29e05691e624927e5ebbf0fb86" },
+  "which-key.nvim": { "branch": "main", "commit": "4433e5ec9a507e5097571ed55c02ea9658fb268a" }
 }

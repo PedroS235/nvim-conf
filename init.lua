@@ -22,6 +22,7 @@ spec("pedros.lsp-config")
 spec("pedros.cmp")
 spec("pedros.presence")
 spec("pedros.schema-store")
+spec("pedros.which-key")
 
 --[[ TODO: 
     These plugins were not ported yet.
