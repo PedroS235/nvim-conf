@@ -16,36 +16,54 @@ local function lsp_keymaps(bufnr)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
 	keymap(bufnr, "n", "ca", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
 	keymap(bufnr, "n", "rn", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
+	keymap(
+		bufnr,
+		"n",
+		"<leader>ih",
+		"<cmd>lua require('pedros.lsp').toggle_inlay_hints()<cr>",
+		{ desc = "Toggle Inlay Hints" }
+	)
 end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
+
+	if client.server_capabilities.inlayHintProvider then
+		vim.lsp.inlay_hint.enable(bufnr, false)
+	end
+end
+
+M.toggle_inlay_hints = function()
+	local bufnr = vim.api.nvim_get_current_buf()
+	local state = vim.lsp.inlay_hint.is_enabled(bufnr)
+	vim.lsp.inlay_hint.enable(bufnr, not state)
 end
 
 function M.common_capabilities()
+	local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+	if status_ok then
+		local capabilities = cmp_nvim_lsp.default_capabilities()
+		capabilities.offsetEncoding = { "utf-16" }
+		return capabilities
+	end
+
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-	capabilities.offsetEncoding = { "utf-16" }
+	capabilities.textDocument.completion.completionItem.snippetSupport = true
+	capabilities.textDocument.completion.completionItem.resolveSupport = {
+		properties = {
+			"documentation",
+			"detail",
+			"additionalTextEdits",
+		},
+	}
+
 	return capabilities
 end
 
 function M.config()
 	local lspconfig = require("lspconfig")
 	local icons = require("pedros.icons")
-
-	local servers = {
-		"lua_ls",
-		"cssls",
-		"html",
-		"tsserver",
-		"pyright",
-		"bashls",
-		"jsonls",
-		"yamlls",
-		"marksman",
-		"tailwindcss",
-		"clangd",
-		"rust_analyzer",
-	}
+	local servers = require("mason-lspconfig").get_installed_servers()
 
 	local default_diagnostic_config = {
 		signs = {
