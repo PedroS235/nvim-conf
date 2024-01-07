@@ -4,18 +4,38 @@ local M = {
 }
 
 function M.config()
-	local opts = { noremap = true, silent = true }
-	local keymap = vim.keymap.set
+	local icons = require("pedros.icons")
+	local actions = require("telescope.actions")
 
-	keymap("n", "<leader>f", require("telescope.builtin").find_files, opts) -- Find Files
-	keymap("n", "<leader>lg", require("telescope.builtin").live_grep, opts) -- Live grep
-	keymap("n", "<leader>bl", require("telescope.builtin").buffers, opts) -- View current buffers
-	keymap("n", "<leader>dg", require("telescope.builtin").diagnostics, opts) -- View the lsp diagnostics of the current buffers
-	keymap("n", "<leader>ch", require("telescope.builtin").command_history, opts) -- View the commands
+	vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find Files" })
+	vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Find Grep" })
+	vim.keymap.set("n", "<leader>fs", require("telescope.builtin").grep_string, { desc = "Find String" })
+	vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find Buffers" })
+	vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "Find Diagnostics" })
+	vim.keymap.set("n", "<leader>fh", require("telescope.builtin").command_history, { desc = "Find command History" })
 
 	require("telescope").setup({
+		defaults = {
+			prompt_prefix = icons.ui.Telescope .. " ",
+			selection_caret = icons.ui.Forward .. " ",
+		},
 		pickers = {
-			find_files = { theme = "dropdown", previewer = true },
+			find_files = { theme = "dropdown", previewer = false },
+			live_grep = { theme = "dropdown", previewer = true },
+			grep_string = { theme = "dropdown", previewer = true },
+			buffers = {
+				theme = "dropdown",
+				previewer = false,
+				initial_mode = "normal",
+				mappings = {
+					i = {
+						["<C-d>"] = actions.delete_buffer,
+					},
+					n = {
+						["dd"] = actions.delete_buffer,
+					},
+				},
+			},
 		},
 	})
 end

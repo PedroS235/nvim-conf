@@ -44,11 +44,6 @@ function M.config()
 
 		autotag = { enable = true },
 
-		context_commentstring = {
-			enable = true,
-			enable_autocmd = false,
-		},
-
 		autopairs = { enable = true },
 	})
 end

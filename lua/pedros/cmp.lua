@@ -200,7 +200,7 @@ function M.config()
 			},
 		},
 		experimental = {
-			ghost_text = false,
+			ghost_text = true,
 		},
 	})
 end

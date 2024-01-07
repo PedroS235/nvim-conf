@@ -28,7 +28,6 @@ M.formatters = {
 	"prettier",
 	"beautysh",
 	"clang_format",
-	"marksman",
 }
 
 function M.config()
