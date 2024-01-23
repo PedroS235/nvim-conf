@@ -32,9 +32,9 @@ spec("pedros.tabby")
 spec("pedros.bqf")
 spec("pedros.project")
 spec("pedros.ufo")
-spec("pedros.alpha")
+-- spec("pedros.alpha")
 
 -- Having problems with line movement
--- spec("pedros.tmux-navigator")
+spec("pedros.tmux-navigator")
 
 require("pedros.lazy")
