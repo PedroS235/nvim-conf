@@ -21,8 +21,8 @@ keymap("v", "<", "<gv", opts) -- LEFT
 keymap("v", ">", ">gv", opts) -- RIGHT
 
 -- Move a text selction up/down
-keymap("v", "<C-j>", ":m '>+1<CR>gv=gv", opts) -- UP
-keymap("v", "<C-k>", ":m '<-2<CR>gv=gv", opts) -- DOWN
+keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- UP
+keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- DOWN
 
 -- Remove the highlight from the search
 keymap("n", "<leader>nh", ":noh<CR>", opts)
