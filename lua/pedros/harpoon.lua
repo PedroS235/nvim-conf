@@ -4,11 +4,11 @@ local M = {
 }
 
 function M.config()
-	vim.keymap.set("n", "<leader>ht", function()
+	vim.keymap.set("n", "<leader>h", function()
 		require("harpoon.ui").toggle_quick_menu()
 	end, { desc = "Harpoon Toggle" })
 
-	vim.keymap.set("n", "<leader>hm", function()
+	vim.keymap.set("n", "<leader>m", function()
 		vim.notify("⚓ Marked File")
 		require("harpoon.mark").add_file()
 	end, { desc = "Harpoon Mark" })
