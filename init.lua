@@ -34,7 +34,6 @@ spec("pedros.project")
 spec("pedros.ufo")
 -- spec("pedros.alpha")
 
--- Having problems with line movement
 spec("pedros.tmux-navigator")
 
 require("pedros.lazy")
