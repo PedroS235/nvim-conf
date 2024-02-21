@@ -13,13 +13,13 @@ function M.config()
 		require("harpoon.mark").add_file()
 	end, { desc = "Harpoon Mark" })
 
-	vim.keymap.set("n", "L", function()
-		require("harpoon.ui").nav_next()
-	end, { desc = "Harpo>hmon Mark" })
-
-	vim.keymap.set("n", "H", function()
-		require("harpoon.ui").nav_prev()
-	end, { desc = "Harpo>hmon Mark" })
+	-- vim.keymap.set("n", "L", function()
+	-- 	require("harpoon.ui").nav_next()
+	-- end, { desc = "Harpo>hmon Mark" })
+	--
+	-- vim.keymap.set("n", "H", function()
+	-- 	require("harpoon.ui").nav_prev()
+	-- end, { desc = "Harpo>hmon Mark" })
 end
 
 return M

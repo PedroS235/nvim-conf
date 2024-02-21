@@ -7,8 +7,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Navigation between active buffers
--- keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
--- keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
+keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
+keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
 
 -- Resize windows
 keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts) -- LEFT
