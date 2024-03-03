@@ -60,3 +60,6 @@ opt.undofile = true
 
 -- Set neovim to use system's clipboard
 -- opt.clipboard:append("unnamedplus")
+
+-- For obsidian.nvim to work properly
+opt.conceallevel = 2
