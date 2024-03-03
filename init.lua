@@ -34,6 +34,7 @@ spec("pedros.project")
 spec("pedros.ufo")
 -- spec("pedros.alpha")
 spec("pedros.obsidian")
+spec("pedros.todo-comments")
 
 spec("pedros.tmux-navigator")
 
