@@ -23,6 +23,7 @@ function M.config()
 			formatting.beautysh,
 			formatting.clang_format,
 			formatting.rustfmt,
+			formatting.csharpier,
 		},
 		-- Autoformatting on save
 		on_attach = function(client, bufnr)
