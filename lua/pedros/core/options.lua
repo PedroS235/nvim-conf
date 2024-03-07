@@ -19,6 +19,7 @@ opt.termguicolors = true
 
 -- Show the sign column.
 opt.signcolumn = "yes"
+opt.cursorline = true
 
 -- Vertical splits will always split to the right
 opt.splitright = true
