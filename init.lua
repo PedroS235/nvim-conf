@@ -3,7 +3,9 @@ require("pedros.core.keymaps")
 require("pedros.launch")
 require("pedros.autocmds")
 
-spec("pedros.colorscheme")
+-- spec("pedros.themes.catppuccin")
+spec("pedros.themes.tokyonight")
+
 spec("pedros.lsp")
 spec("pedros.cmp")
 spec("pedros.telescope")
@@ -34,8 +36,9 @@ spec("pedros.ufo")
 spec("pedros.obsidian")
 spec("pedros.todo-comments")
 spec("pedros.tmux-navigator")
+spec("pedros.vim-sleuth")
 
--- spec("pedros.project")
--- spec("pedros.alpha")
+spec("pedros.project")
+spec("pedros.alpha")
 
 require("pedros.lazy")
