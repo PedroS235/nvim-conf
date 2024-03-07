@@ -7,12 +7,23 @@ function M.config()
 	local icons = require("pedros.icons")
 	local actions = require("telescope.actions")
 
-	vim.keymap.set("n", "<leader>ff", require("telescope.builtin").find_files, { desc = "Find Files" })
-	vim.keymap.set("n", "<leader>fg", require("telescope.builtin").live_grep, { desc = "Find Grep" })
-	vim.keymap.set("n", "<leader>fs", require("telescope.builtin").grep_string, { desc = "Find String" })
-	vim.keymap.set("n", "<leader>fb", require("telescope.builtin").buffers, { desc = "Find Buffers" })
-	vim.keymap.set("n", "<leader>fd", require("telescope.builtin").diagnostics, { desc = "Find Diagnostics" })
-	vim.keymap.set("n", "<leader>fh", require("telescope.builtin").command_history, { desc = "Find command History" })
+	local builtin = require("telescope.builtin")
+	vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "Find Files" })
+	vim.keymap.set("n", "<leader>fg", builtin.live_grep, { desc = "Find Grep" })
+	vim.keymap.set("n", "<leader>fs", builtin.grep_string, { desc = "Find String" })
+	vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "Find Buffers" })
+	vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Find Diagnostics" })
+	vim.keymap.set("n", "<leader>fh", builtin.command_history, { desc = "Find command History" })
+	vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Find Diagnostics" })
+	vim.keymap.set("n", "<leader>fr", builtin.resume, { desc = "Find Resume" })
+	vim.keymap.set("n", "<leader>f.", builtin.oldfiles, { desc = 'Find Recent Files ("." for repeat)' })
+	vim.keymap.set("n", "<leader>fc", builtin.colorscheme, { desc = 'Find Recent Files ("." for repeat)' })
+	vim.keymap.set("n", "<leader>/", function()
+		builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
+			winblend = 10,
+			previewer = false,
+		}))
+	end, { desc = "[/] Fuzzily search in current buffer" })
 
 	require("telescope").setup({
 		defaults = {
