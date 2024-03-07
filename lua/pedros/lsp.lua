@@ -3,6 +3,7 @@
 local M = {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
+	virtual_text = false,
 }
 
 local function lsp_keymaps(bufnr)
@@ -23,6 +24,13 @@ local function lsp_keymaps(bufnr)
 		"<cmd>lua require('pedros.lsp').toggle_inlay_hints()<cr>",
 		{ desc = "Toggle Inlay Hints" }
 	)
+	keymap(
+		bufnr,
+		"n",
+		"<leader>vt",
+		"<cmd>lua require('pedros.lsp').toggle_virtual_text()<cr>",
+		{ desc = "Toggle Inlay Hints" }
+	)
 end
 
 M.on_attach = function(client, bufnr)
@@ -37,6 +45,11 @@ M.toggle_inlay_hints = function()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local state = vim.lsp.inlay_hint.is_enabled(bufnr)
 	vim.lsp.inlay_hint.enable(bufnr, not state)
+end
+
+M.toggle_virtual_text = function()
+	M.virtual_text = not M.virtual_text
+	vim.diagnostic.config({ virtual_text = M.virtual_text })
 end
 
 function M.common_capabilities()
@@ -75,7 +88,7 @@ function M.config()
 				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 			},
 		},
-		virtual_text = false,
+		virtual_text = M.virtual_text,
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
