@@ -43,4 +43,4 @@ keymap("n", "N", "Nzz", opts)
 keymap("x", "p", [["_dP]], opts)
 
 -- Close/delete current buffer
-keymap("n", "<leader>q", ":bd<CR>", { desc = "Close current Buffer" })
+keymap("n", "<leader>q", "<cmd>:bd<CR>", { desc = "Close current Buffer" })
