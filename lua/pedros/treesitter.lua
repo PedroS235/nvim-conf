@@ -19,31 +19,20 @@ local M = {
 function M.config()
 	require("nvim-treesitter.configs").setup({
 		ensure_installed = {
+			"bash",
 			"c",
-			"cpp",
-			"lua",
 			"vim",
 			"vimdoc",
-			"python",
-			"bash",
 			"markdown",
-			"rust",
-			"cmake",
-			"dockerfile",
+			"lua",
 			"html",
-			"yaml",
-			"json",
 		},
 		sync_install = false,
+		auto_install = true,
 
-		highlight = {
-			enable = true,
-		},
-
+		highlight = { enable = true },
 		indent = { enable = true },
-
 		autotag = { enable = true },
-
 		autopairs = { enable = true },
 	})
 end
