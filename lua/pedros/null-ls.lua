@@ -20,7 +20,7 @@ function M.config()
 				extra_filetypes = { "toml" },
 			}),
 			formatting.black.with({ extra_args = { "-l", "79" } }),
-			formatting.beautysh,
+			-- formatting.beautysh,
 			formatting.clang_format,
 			formatting.rustfmt,
 			formatting.csharpier,
