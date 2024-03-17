@@ -15,15 +15,6 @@ function M.config()
 		return b
 	end
 
-	dashboard.section.header.val = {
-		[[                               __                ]],
-		[[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-		[[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-		[[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-		[[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-		[[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-	}
-
 	dashboard.section.buttons.val = {
 		button("f", icons.ui.Files .. " Find file", ":Telescope find_files <CR>"),
 		button("n", icons.ui.NewFile .. " New file", ":ene <BAR> startinsert <CR>"),
@@ -34,11 +25,8 @@ function M.config()
 		button("c", icons.ui.Gear .. " Config", ":e ~/.config/nvim/init.lua <CR>"),
 		button("q", icons.ui.SignOut .. " Quit", ":qa<CR>"),
 	}
-	local function footer()
-		return "PedroS235 NeoVim's Config"
-	end
 
-	dashboard.section.footer.val = footer()
+	dashboard.section.footer.val = "PedroS235 NeoVim's Config"
 
 	dashboard.section.header.opts.hl = "String"
 	dashboard.section.buttons.opts.hl = "Macro"
