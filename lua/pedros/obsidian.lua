@@ -25,7 +25,7 @@ function M.config()
 		workspaces = {
 			{
 				name = "Second Brain",
-				path = "~/MEGA/Second Brain Vault/",
+				path = "~/MEGA/Second_Brain_Vault/",
 			},
 		},
 		mappings = {
