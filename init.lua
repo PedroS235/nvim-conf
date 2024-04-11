@@ -12,6 +12,7 @@ spec("pedros.cmp")
 spec("pedros.telescope")
 spec("pedros.treesitter")
 spec("pedros.mason")
+spec("pedros.conform")
 spec("pedros.null-ls")
 
 -- Extras

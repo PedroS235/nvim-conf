@@ -5,7 +5,11 @@ local M = {
 	},
 }
 
-function M.config()
+-- NOTE: For the moment null-ls is not working properly with rustfmt and beautysh
+-- Therefore, for the moment I fallback to conform.nvim
+local backup = {}
+
+function backup.config()
 	local null_ls = require("null-ls")
 	local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
@@ -20,7 +24,7 @@ function M.config()
 				extra_filetypes = { "toml" },
 			}),
 			formatting.black.with({ extra_args = { "-l", "79" } }),
-			-- formatting.beautysh,
+			formatting.beautysh,
 			formatting.clang_format,
 			formatting.rustfmt,
 			formatting.csharpier,
