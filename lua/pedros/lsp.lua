@@ -37,14 +37,14 @@ M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 
 	if client.server_capabilities.inlayHintProvider then
-		vim.lsp.inlay_hint.enable(bufnr, false)
+		vim.lsp.inlay_hint.enable(false)
 	end
 end
 
 M.toggle_inlay_hints = function()
 	local bufnr = vim.api.nvim_get_current_buf()
 	local state = vim.lsp.inlay_hint.is_enabled(bufnr)
-	vim.lsp.inlay_hint.enable(bufnr, not state)
+	vim.lsp.inlay_hint.enable(not state)
 end
 
 M.toggle_virtual_text = function()
