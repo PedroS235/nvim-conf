@@ -5,6 +5,7 @@ require("pedros.autocmds")
 
 -- Colorscheme
 spec("pedros.themes.tokyonight")
+-- spec("pedros.themes.catppuccin")
 
 -- Core
 spec("pedros.lsp")
