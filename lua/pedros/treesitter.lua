@@ -32,9 +32,10 @@ function M.config()
 
 		highlight = { enable = true },
 		indent = { enable = true },
-		autotag = { enable = true },
+		-- autotag = { enable = true },
 		autopairs = { enable = true },
 	})
+	require("nvim-ts-autotag").setup({})
 end
 
 return M

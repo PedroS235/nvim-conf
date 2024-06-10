@@ -33,6 +33,7 @@ local M = {
 			c = { "clang-format" },
 			html = { "prettier" },
 			javascript = { "prettier" },
+			markdown = { "prettier" },
 		},
 	},
 }
