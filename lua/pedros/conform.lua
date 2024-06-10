@@ -3,12 +3,12 @@ local M = {
 	lazy = false,
 	keys = {
 		{
-			"<leader>fc",
+			"<leader>cf",
 			function()
 				require("conform").format({ async = true, lsp_fallback = true })
 			end,
 			mode = "",
-			desc = "[F]ormat [C]ode",
+			desc = "[C]ode [F]ormat",
 		},
 	},
 	opts = {
