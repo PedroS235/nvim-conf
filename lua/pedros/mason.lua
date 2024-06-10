@@ -4,6 +4,7 @@ local M = {
 		"williamboman/mason.nvim",
 		"jayp0521/mason-null-ls.nvim",
 		"nvim-lua/plenary.nvim",
+		"nvimtools/none-ls.nvim",
 	},
 }
 
