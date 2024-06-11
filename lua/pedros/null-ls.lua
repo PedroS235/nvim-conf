@@ -17,10 +17,8 @@ function M.config()
 			formatting.stylua,
 			formatting.prettier,
 			formatting.black.with({ extra_args = { "-l", "79" } }),
-			formatting.beautysh,
+			formatting.shfmt,
 			formatting.clang_format,
-			formatting.rustfmt,
-			formatting.csharpier,
 		},
 		-- Autoformatting on save
 		on_attach = function(client, bufnr)
