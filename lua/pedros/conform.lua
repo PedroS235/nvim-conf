@@ -12,7 +12,7 @@ local M = {
 		},
 	},
 	opts = {
-		notify_on_error = false,
+		notify_on_error = true,
 		format_on_save = function(bufnr)
 			-- Disable "format_on_save lsp_fallback" for languages that don't
 			-- have a well standardized coding style. You can add additional
@@ -27,8 +27,8 @@ local M = {
 			lua = { "stylua" },
 			python = { "black" },
 			rust = { "rustfmt" },
-			bash = { "beautysh" },
-			zsh = { "beautysh" },
+			bash = { "shfmt" },
+			zsh = { "shfmt" },
 			cpp = { "clang-format" },
 			c = { "clang-format" },
 			html = { "prettier" },
