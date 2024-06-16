@@ -25,7 +25,7 @@ keymap("v", "<A-j>", ":m '>+1<CR>gv=gv", opts) -- UP
 keymap("v", "<A-k>", ":m '<-2<CR>gv=gv", opts) -- DOWN
 
 -- Remove the highlight from the search
-keymap("n", "<leader>nh", ":noh<CR>", opts)
+keymap("n", "<ESC>", ":noh<CR>", opts)
 
 -- Copy/Yank to clipboard
 keymap("v", "<leader>y", '"+y', opts)
