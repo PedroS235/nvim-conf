@@ -21,14 +21,14 @@ local function lsp_keymaps(bufnr)
 		bufnr,
 		"n",
 		"<leader>ih",
-		"<cmd>lua require('pedros.lsp').toggle_inlay_hints()<cr>",
+		"<cmd>lua require('extras.lsp').toggle_inlay_hints()<cr>",
 		{ desc = "Toggle Inlay Hints" }
 	)
 	keymap(
 		bufnr,
 		"n",
 		"<leader>vt",
-		"<cmd>lua require('pedros.lsp').toggle_virtual_text()<cr>",
+		"<cmd>lua require('extras.lsp').toggle_virtual_text()<cr>",
 		{ desc = "Toggle Inlay Hints" }
 	)
 end
@@ -75,7 +75,7 @@ end
 
 function M.config()
 	local lspconfig = require("lspconfig")
-	local icons = require("pedros.icons")
+	local icons = require("extras.icons")
 	local servers = require("mason-lspconfig").get_installed_servers()
 
 	local default_diagnostic_config = {
@@ -119,7 +119,7 @@ function M.config()
 			capabilities = M.common_capabilities(),
 		}
 
-		local require_ok, settings = pcall(require, "pedros.lsp_settings." .. server)
+		local require_ok, settings = pcall(require, "lsp.settings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end

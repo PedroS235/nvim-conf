@@ -1,1 +1,0 @@
-return { import = "pedros.themes" }

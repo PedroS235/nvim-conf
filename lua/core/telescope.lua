@@ -4,7 +4,7 @@ local M = {
 }
 
 function M.config()
-	local icons = require("pedros.icons")
+	local icons = require("extras.icons")
 	local actions = require("telescope.actions")
 
 	local builtin = require("telescope.builtin")

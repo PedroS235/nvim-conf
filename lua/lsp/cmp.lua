@@ -52,7 +52,7 @@ function M.config()
 	require("luasnip/loaders/from_vscode").lazy_load()
 	require("luasnip").filetype_extend("typescriptreact", { "html" })
 
-	local icons = require("pedros.icons")
+	local icons = require("extras.icons")
 
 	cmp.setup({
 		snippet = {

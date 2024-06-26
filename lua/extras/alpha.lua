@@ -7,7 +7,7 @@ local M = {
 
 function M.config()
 	local dashboard = require("alpha.themes.dashboard")
-	local icons = require("pedros.icons")
+	local icons = require("extras.icons")
 
 	local function button(sc, txt, keybind, keybind_opts)
 		local b = dashboard.button(sc, txt, keybind, keybind_opts)
