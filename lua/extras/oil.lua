@@ -26,8 +26,13 @@ return {
 		},
 
 		view_options = {
-			-- Show files and directories that start with "."
-			show_hidden = true,
+			show_hidden = false,
+
+			-- Show ../ and keep the rest .* hidden
+			---@diagnostic disable-next-line: unused-local
+			is_hidden_file = function(name, bufnr)
+				return not vim.startswith(name, "..") and vim.startswith(name, ".")
+			end,
 		},
 	},
 }
