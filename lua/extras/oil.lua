@@ -24,5 +24,10 @@ return {
 			["g."] = "actions.toggle_hidden",
 			["g\\"] = "actions.toggle_trash",
 		},
+
+		view_options = {
+			-- Show files and directories that start with "."
+			show_hidden = true,
+		},
 	},
 }
