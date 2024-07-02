@@ -20,31 +20,21 @@ local function lsp_keymaps(bufnr)
 	keymap(
 		bufnr,
 		"n",
-		"<leader>ih",
-		"<cmd>lua require('extras.lsp').toggle_inlay_hints()<cr>",
-		{ desc = "Toggle Inlay Hints" }
-	)
-	keymap(
-		bufnr,
-		"n",
-		"<leader>vt",
-		"<cmd>lua require('extras.lsp').toggle_virtual_text()<cr>",
-		{ desc = "Toggle Inlay Hints" }
+		"<leader>tv",
+		"<cmd>lua require('lsp.lsp').toggle_virtual_text()<cr>",
+		{ desc = "[T]oggle [V]irtual Text" }
 	)
 end
 
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 
-	if client.server_capabilities.inlayHintProvider then
-		vim.lsp.inlay_hint.enable(false)
+	if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
+		vim.keymap.set("n", "<leader>th", function()
+			---@diagnostic disable-next-line: missing-parameter
+			vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+		end, { desc = "[T]oggle Inlay [H]ints" })
 	end
-end
-
-M.toggle_inlay_hints = function()
-	local bufnr = vim.api.nvim_get_current_buf()
-	local state = vim.lsp.inlay_hint.is_enabled(bufnr)
-	vim.lsp.inlay_hint.enable(not state)
 end
 
 M.toggle_virtual_text = function()
