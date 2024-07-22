@@ -14,7 +14,7 @@ spec("lsp.schema-store")
 -- spec("lsp.null-ls")
 
 -- Extras
--- spec("extras.nvim-tree")
+spec("extras.nvim-tree")
 spec("extras.comment")
 spec("extras.lualine")
 spec("extras.gitsigns")
@@ -36,6 +36,7 @@ spec("extras.vim-sleuth")
 spec("extras.project")
 spec("extras.mini")
 spec("extras.noice")
+spec("extras.markdown")
 spec("extras.oil")
 
 -- spec("extras.copilot")
