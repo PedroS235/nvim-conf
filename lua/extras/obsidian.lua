@@ -12,6 +12,7 @@ local M = {
 function M.config()
 	local obsidian = require("obsidian")
 	obsidian.setup({
+		ui = { enable = false },
 		workspaces = {
 			{
 				name = "Second Brain",

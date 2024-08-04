@@ -38,6 +38,7 @@ spec("extras.mini")
 spec("extras.noice")
 spec("extras.markdown")
 spec("extras.oil")
+spec("extras.image")
 
 -- spec("extras.copilot")
 
