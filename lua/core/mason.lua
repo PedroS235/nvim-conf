@@ -21,6 +21,7 @@ M.servers = {
 	"tailwindcss",
 	"clangd",
 	"rust_analyzer",
+	"harper_ls",
 }
 
 M.formatters = {
