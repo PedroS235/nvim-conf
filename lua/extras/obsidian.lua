@@ -19,8 +19,18 @@ function M.config()
 				path = "~/MEGA/Second_Brain_Vault/",
 			},
 		},
+
+		daily_notes = {
+			folder = "DailyNotes",
+			template = "DailyNoteTemplate.md",
+		},
+
+		templates = {
+			folder = "Templates",
+		},
 		mappings = {
 			-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
+
 			["gf"] = {
 				action = function()
 					return require("obsidian").util.gf_passthrough()
