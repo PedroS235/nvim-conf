@@ -38,6 +38,8 @@ local M = {
 		{
 			"hrsh7th/cmp-nvim-lua",
 		},
+		"luckasRanarison/tailwind-tools.nvim",
+		"onsails/lspkind-nvim",
 	},
 }
 
@@ -86,33 +88,9 @@ function M.config()
 		}),
 		formatting = {
 			fields = { "kind", "abbr", "menu" },
-			format = function(entry, vim_item)
-				vim_item.kind = icons.kind[vim_item.kind]
-				vim_item.menu = ({
-					nvim_lsp = "",
-					nvim_lua = "",
-					luasnip = "",
-					buffer = "",
-					path = "",
-					emoji = "",
-				})[entry.source.name]
-				if entry.source.name == "copilot" then
-					vim_item.kind = icons.git.Octoface
-					vim_item.kind_hl_group = "CmpItemKindCopilot"
-				end
-
-				if entry.source.name == "cmp_tabnine" then
-					vim_item.kind = icons.misc.Robot
-					vim_item.kind_hl_group = "CmpItemKindTabnine"
-				end
-
-				if entry.source.name == "emoji" then
-					vim_item.kind = icons.misc.Smiley
-					vim_item.kind_hl_group = "CmpItemKindEmoji"
-				end
-
-				return vim_item
-			end,
+			format = require("lspkind").cmp_format({
+				before = require("tailwind-tools.cmp").lspkind_format,
+			}),
 		},
 		sources = {
 			-- { name = "copilot" },
