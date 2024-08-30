@@ -11,7 +11,6 @@ spec("lsp.lsp")
 spec("lsp.cmp")
 spec("lsp.conform")
 spec("lsp.schema-store")
-spec("lsp.tailwind-tools")
 -- spec("lsp.null-ls")
 
 -- Extras
