@@ -20,17 +20,22 @@ function M.config()
 			},
 		},
 
+		notes_subdir = "0. Inbox",
+
 		daily_notes = {
 			folder = "DailyNotes",
 			template = "DailyNoteTemplate.md",
 		},
 
 		templates = {
-			folder = "Templates",
+			folder = "99. Templates",
 		},
-		mappings = {
-			-- Overrides the 'gf' mapping to work on markdown/wiki links within your vault.
 
+		attachments = {
+			img_folder = "98. Assets", -- This is the default
+		},
+
+		mappings = {
 			["gf"] = {
 				action = function()
 					return require("obsidian").util.gf_passthrough()
