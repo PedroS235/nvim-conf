@@ -56,7 +56,7 @@ keymap("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- Obsidian
 keymap("n", "<leader>on", "<cmd>ObsidianNew<CR>", { desc = "Create a new Obsidian note" })
-keymap("n", "<leader>ont", "<cmd>ObsidianNewFromTemplate<CR>", { desc = "Create a new Obsidian note with template" })
+keymap("n", "<leader>ot", "<cmd>ObsidianTemplate<CR>", { desc = "Fill in obsidian template" })
 keymap("n", "<leader>od", "<cmd>ObsidianToday<CR>", { desc = "Open/Create todays daily note" })
 keymap("n", "<leader>or", "<cmd>ObsidianRename<CR>", { desc = "Rename current obsidian note" })
 keymap("n", "<leader>os", "<cmd>ObsidianSearch<CR>", { desc = "Search for words in obsidian vault" })
