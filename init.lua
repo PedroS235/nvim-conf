@@ -38,12 +38,12 @@ spec("extras.mini")
 spec("extras.noice")
 spec("extras.markdown")
 spec("extras.oil")
-spec("extras.image")
+-- spec("extras.image")
 
 -- spec("extras.copilot")
 
--- spec("themes.tokyonight")
+spec("themes.tokyonight")
 -- spec("themes.onedark")
-spec("themes.catppuccin")
+-- spec("themes.catppuccin")
 
 require("core.lazy")

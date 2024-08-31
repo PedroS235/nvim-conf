@@ -1,7 +1,7 @@
 local M = {
 	"epwalsh/obsidian.nvim",
 	version = "*", -- recommended, use latest release instead of latest commit
-	lazy = true,
+	lazy = false,
 	ft = "markdown",
 	dependencies = {
 		-- Required.
@@ -20,19 +20,19 @@ function M.config()
 			},
 		},
 
-		notes_subdir = "0. Inbox",
+		notes_subdir = "0_Inbox",
 
 		daily_notes = {
-			folder = "DailyNotes",
+			folder = "5_DailyNotes",
 			template = "DailyNoteTemplate.md",
 		},
 
 		templates = {
-			folder = "99. Templates",
+			folder = "99_Templates",
 		},
 
 		attachments = {
-			img_folder = "98. Assets", -- This is the default
+			img_folder = "98_Assets",
 		},
 
 		mappings = {
