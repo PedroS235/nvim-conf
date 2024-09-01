@@ -66,5 +66,5 @@ opt.undofile = true
 opt.conceallevel = 2
 
 -- Decrease update time
-vim.opt.updatetime = 250
-vim.opt.timeoutlen = 300
+opt.updatetime = 250
+opt.timeoutlen = 300
