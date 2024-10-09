@@ -23,7 +23,7 @@ function M.config()
 		notes_subdir = "0_Inbox",
 
 		daily_notes = {
-			folder = "5_DailyNotes",
+			folder = "4_DailyNotes",
 			template = "DailyNoteTemplate.md",
 		},
 
