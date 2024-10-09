@@ -5,6 +5,7 @@ Pedro
 Bavle
 Soares
 Hriday
+GitLab
 ClickUp
 SMapper
 everytime
