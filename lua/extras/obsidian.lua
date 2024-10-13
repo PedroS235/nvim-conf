@@ -11,19 +11,27 @@ local M = {
 
 function M.config()
 	local obsidian = require("obsidian")
+	local backup_path = "~/Documents/Notes/"
+
+	if not vim.fn.isdirectory(backup_path) then
+		vim.fn.mkdir(backup_path, "p")
+	end
+
+	local vault_path = os.getenv("SECOND_BRAIN_VAULT") or backup_path
+
 	obsidian.setup({
 		ui = { enable = false },
 		workspaces = {
 			{
 				name = "Second Brain",
-				path = "~/MEGA/Second_Brain_Vault/",
+				path = vault_path,
 			},
 		},
 
 		notes_subdir = "0_Inbox",
 
 		daily_notes = {
-			folder = "5_DailyNotes",
+			folder = "4_DailyNotes",
 			template = "DailyNoteTemplate.md",
 		},
 
@@ -50,6 +58,21 @@ function M.config()
 				opts = { buffer = true },
 			},
 		},
+
+		---@return table
+		note_frontmatter_func = function(note)
+			local out = { id = note.id, tags = note.tags }
+
+			-- `note.metadata` contains any manually added fields in the frontmatter.
+			-- So here we just make sure those fields are kept in the frontmatter.
+			if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
+				for k, v in pairs(note.metadata) do
+					out[k] = v
+				end
+			end
+
+			return out
+		end,
 	})
 end
 
