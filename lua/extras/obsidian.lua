@@ -51,12 +51,12 @@ function M.config()
 				opts = { noremap = false, expr = true, buffer = true },
 			},
 			-- Toggle check-boxes.
-			["<leader>ch"] = {
-				action = function()
-					return require("obsidian").util.toggle_checkbox()
-				end,
-				opts = { buffer = true },
-			},
+			-- ["<leader>ch"] = {
+			-- 	action = function()
+			-- 		return require("obsidian").util.toggle_checkbox()
+			-- 	end,
+			-- 	opts = { buffer = true },
+			-- },
 		},
 
 		---@return table

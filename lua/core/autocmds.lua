@@ -9,6 +9,9 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
 	callback = function()
-		vim.opt_local.wrap = true
+		vim.opt_local.wrap = false
+		vim.keymap.set("n", "<leader>ch", function()
+			require("obsidian").util.toggle_checkbox()
+		end, { desc = "Toggle a checkbox" })
 	end,
 })
