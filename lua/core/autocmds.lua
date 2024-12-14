@@ -5,6 +5,12 @@ vim.api.nvim_create_autocmd({ "BufWinEnter" }, {
 	end,
 })
 
+vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+	callback = function()
+		vim.highlight.on_yank()
+	end,
+})
+
 -- Wrap text when editing git commits and markdown files
 vim.api.nvim_create_autocmd({ "FileType" }, {
 	pattern = { "gitcommit", "markdown" },
