@@ -8,13 +8,13 @@ vim.g.maplocalleader = " "
 
 -- Navigation between active buffers
 keymap("n", "H", ":bprevious<CR>", opts) -- LEFT
-keymap("n", "L", ":bnext<CR>", opts) -- RIGHT
+keymap("n", "L", ":bnext<CR>", opts)     -- RIGHT
 
 -- Resize windows
-keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts) -- LEFT
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)  -- LEFT
 keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts) -- RIGHT
-keymap("n", "<C-Up>", ":resize +2<CR>", opts) -- UP
-keymap("n", "<C-Down>", ":resize -2<CR>", opts) -- DOWN
+keymap("n", "<C-Up>", ":resize +2<CR>", opts)             -- UP
+keymap("n", "<C-Down>", ":resize -2<CR>", opts)           -- DOWN
 
 -- Indent line
 keymap("v", "<", "<gv", opts) -- LEFT
@@ -45,8 +45,8 @@ keymap("x", "p", [["_dP]], opts)
 -- Close/delete current buffer
 keymap("n", "<leader>q", "<cmd>:bd<CR>", { desc = "Close current Buffer" })
 
-keymap("n", "<leader>e", "<cmd>Oil<CR>", { desc = "Open Oil file navigator" })
 
+-- TODO: move these keymapsm to the plugins
 -- Diagnostic keymaps
 keymap("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
 keymap("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
