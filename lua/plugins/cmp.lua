@@ -7,15 +7,26 @@ return {
 		config = function()
 			local lspkind = require("lspkind")
 			local cmp = require("cmp")
+			local luasnip = require("luasnip")
+			require("luasnip/loaders/from_vscode").lazy_load()
+			require("luasnip").filetype_extend("typescriptreact", { "html" })
+
 			cmp.setup({
+				snippet = {
+					-- REQUIRED - you must specify a snippet engine
+					expand = function(args)
+						luasnip.lsp_expand(args.body) -- For `luasnip` users.
+					end,
+				},
 				formatting = {
 					fields = { "kind", "abbr", "menu" },
 					expandable_indicator = true,
 					format = lspkind.cmp_format({}),
 				},
 				sources = {
-					{ name = "lazydev", group_index = 0 }, -- set group index to 0 to skip loading LuaLS completions
+					{ name = "lazydev", group_index = 0 },
 					{ name = "nvim_lsp" },
+					{ name = "luasnip" },
 					{ name = "buffer" },
 					{ name = "path" },
 					{ name = "emoji" },
@@ -75,7 +86,21 @@ return {
 		event = "InsertEnter",
 	},
 	{
+		"hrsh7th/cmp-nvim-lua",
+	},
+	{
 		"onsails/lspkind-nvim",
 		event = "InsertEnter",
+	},
+	{
+		"saadparwaiz1/cmp_luasnip",
+		event = "InsertEnter",
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		event = "InsertEnter",
+		dependencies = {
+			"rafamadriz/friendly-snippets",
+		},
 	},
 }
