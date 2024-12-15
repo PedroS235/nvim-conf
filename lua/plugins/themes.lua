@@ -1,26 +1,51 @@
 return {
-    {
-        "folke/tokyonight.nvim",
-        lazy = false, -- make sure we load this during startup if it is your main colorscheme
-        priority = 1000, -- make sure to load this before all the other start plugins
+	{
+		"folke/tokyonight.nvim",
+		enabled = true,
+		lazy = false,
+		priority = 1000,
 
-        config = function()
-            require("tokyonight").setup({
-                style = "moon",  -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-                transparent = false, -- Enable this to disable setting the background color
-                styles = {
-                    -- Style to be applied to different syntax groups
-                    -- Value is any valid attr-list value for `:help nvim_set_hl`
-                    comments = { italic = true },
-                    keywords = { italic = true },
-                    functions = { bold = true },
-                    variables = {},
-                    -- Background styles. Can be "dark", "transparent" or "normal"
-                    sidebars = "dark",
-                    floats = "dark",
-                }
-            })
-            vim.cmd.colorscheme("tokyonight")
-        end,
-    },
+		opts = {
+			style = "moon", -- `storm|moon|night|day`
+			transparent = false,
+			styles = {
+				comments = { italic = true },
+				keywords = { italic = true },
+				functions = { bold = true },
+			},
+		},
+	},
+
+	{
+		"navarasu/onedark.nvim",
+		enabled = true,
+		priority = 1000,
+		lazy = false,
+		opts = {
+			style = "darker", -- 'dark|darker|cool|deep|warm|warmer|light'
+			transparent = false,
+
+			code_style = {
+				comments = "italic",
+				functions = "bold",
+			},
+		},
+	},
+
+	{
+		"catppuccin/nvim",
+		priority = 1000,
+		lazy = false,
+		enabled = true,
+		name = "catppuccin",
+		opts = {
+			flavour = "mocha",
+			transparent_background = false,
+			term_colors = false,
+			styles = {
+				comments = { "italic" },
+				functions = { "bold" },
+			},
+		},
+	},
 }

@@ -1,6 +1,7 @@
 return {
 	{
 		"neovim/nvim-lspconfig",
+		enabled = true,
 		dependencies = {
 			-- Automatically install LSPs and related tools to stdpath for Neovim
 			{ "williamboman/mason.nvim", config = true }, -- NOTE: Must be loaded before dependants
@@ -123,11 +124,13 @@ return {
 				vim.diagnostic.config({
 					signs = { text = diagnostic_signs },
 					virtual_text = vim.g.virtual_text or false,
+					update_in_insert = false,
+					underline = true,
+					severity_sort = true,
 					float = {
 						focusable = true,
 						style = "minimal",
 						border = "rounded",
-						source = "always",
 						header = "",
 						prefix = "",
 					},
@@ -136,6 +139,10 @@ return {
 
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+
+			vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
+			vim.lsp.handlers["textDocument/signatureHelp"] =
+				vim.lsp.with(vim.lsp.handlers.signature_help, { border = "rounded" })
 
 			local servers = {
 				lua_ls = {
@@ -147,8 +154,7 @@ return {
 							completion = {
 								callSnippet = "Replace",
 							},
-							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							-- diagnostics = { disable = { 'missing-fields' } },
+							diagnostics = { disable = { "missing-fields" } },
 
 							hint = {
 								enable = true,

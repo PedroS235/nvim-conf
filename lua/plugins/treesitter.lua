@@ -1,6 +1,7 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
+		enabled = true,
 		event = { "BufReadPost", "BufNewFile" },
 		build = ":TSUpdate",
 		main = "nvim-treesitter.configs",
@@ -26,11 +27,13 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
+		enabled = false,
 		event = "VeryLazy",
 		opts = {},
 	},
 	{
 		"windwp/nvim-autopairs",
+		enabled = true,
 		event = "InsertEnter",
 		opts = {},
 	},

@@ -1,4 +1,4 @@
-return { -- optional cmp completion source for require statements and module annotations
+return {
 	{
 		"hrsh7th/nvim-cmp",
 		enabled = true,
