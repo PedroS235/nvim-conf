@@ -68,3 +68,9 @@ opt.conceallevel = 2
 -- Decrease update time
 opt.updatetime = 250
 opt.timeoutlen = 300
+
+-- Set to false if terminal does not support nerdfonts
+vim.g.have_nerd_font = true
+
+-- Set to true if virtual text is desired by default
+vim.g.virtual_text = false
