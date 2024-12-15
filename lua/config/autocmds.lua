@@ -21,3 +21,11 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 		end, { desc = "Toggle a checkbox" })
 	end,
 })
+
+vim.api.nvim_create_autocmd({ "TermOpen" }, {
+	callback = function()
+		vim.opt.number = false
+		vim.opt.relativenumber = false
+		vim.cmd("startinsert")
+	end,
+})
